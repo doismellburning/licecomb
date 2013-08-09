@@ -20,7 +20,7 @@ Check a poorly-behaved repo:
 More verbose output:
 
     $ licecomb -v doismellburning/licecomb
-    SUCCESS: Found a license file (LICENSE) in doismellburning/licecomb
+    SUCCESS: Found a license file in doismellburning/licecomb
 
 Check all of a user/organisation's repos:
 
