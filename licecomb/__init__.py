@@ -47,7 +47,7 @@ def repository_has_license(repository):
     return bool(repository.contents("LICENSE") or repository.contents("LICENSE.md"))
 
 
-if __name__ == '__main__':
+def main():
     import argparse
     import sys
 
@@ -72,3 +72,6 @@ if __name__ == '__main__':
         sys.exit(1)
 
     sys.exit(0)
+
+if __name__ == '__main__':
+    main()
