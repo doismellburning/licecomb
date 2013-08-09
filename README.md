@@ -33,6 +33,10 @@
     $ licecomb doismellburning
     # TODO Provide sample output
 
+### Ignore forked repositories
+
+    $ licecomb --ignore-forks doismellburning
+
 ## Issues
 
 * There are many ways of declaring a license; `licecomb` does not and cannot track them all (currently only looking for `/LICENSE`)

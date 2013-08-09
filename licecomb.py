@@ -14,6 +14,8 @@ def licecomb(owner, repository_names, **options):
 
     status = {}
     for repository in repositories:
+        if options['ignore_forks'] and repository.fork:
+            continue
         status[repository.name] = repository_has_license(repository)
 
     # Now some nasty hackery to flip the dict into itself for ease of reporting...
@@ -51,6 +53,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description="Check GitHub repositories for license files")
     parser.add_argument("--verbose", "-v", action="store_true")
+    parser.add_argument("--ignore-forks", action="store_true")
     parser.add_argument("owner", nargs=1)
     parser.add_argument("repository_names", nargs="*", metavar="repository")
    
