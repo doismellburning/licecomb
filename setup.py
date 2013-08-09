@@ -1,8 +1,5 @@
 from setuptools import setup
 
-with open('requirements.txt') as f:
-    required = f.read().splitlines()
-
 setup(
     name='licecomb',
     description='Check GitHub repositories for license files',
@@ -11,7 +8,10 @@ setup(
     url='https://github.com/doismellburning/licecomb',
     version='0.1',
     license='mit',
-    install_requires=required,
+    install_requires=[
+        "github3.py >=0.7, <0.8",
+        "requests >=1.2, <1.3",
+    ],
     packages=['licecomb'],
     entry_points={
         "console_scripts": [
