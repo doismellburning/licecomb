@@ -2,6 +2,10 @@
 
 [`lice`](https://github.com/licenses/lice) is a great tool for generating license files. `licecomb` is a tool for ensuring GitHub repositories actually have a license.
 
+## Installation
+
+    $ pip install licecomb
+
 ## Usage
 
 ### Check a well-behaved repo
