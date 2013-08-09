@@ -32,3 +32,10 @@
 
     $ licecomb doismellburning
     # TODO Provide sample output
+
+## Issues
+
+* There are many ways of declaring a license; `licecomb` does not and cannot track them all (currently only looking for `/LICENSE`)
+    * [License in README](https://github.com/stig/json-framework/)
+    * [License in code files](https://github.com/johnezang/JSONKit/)
+    * There's still the argument that having a `/LICENSE` file is A Good Thing To Do (there must be a pseudo-standard for this somewhere - it's certainly what GitHub now push at repository creation)
