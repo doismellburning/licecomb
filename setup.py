@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='licecomb',
-    description='',
+    description='Check GitHub repositories for license files',
     author='Kristian Glass',
     author_email='licecomb@doismellburning.co.uk',
     url='https://github.com/doismellburning/licecomb',
