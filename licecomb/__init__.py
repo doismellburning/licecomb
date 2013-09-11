@@ -1,13 +1,33 @@
 #!/usr/bin/env python
 
 from __future__ import print_function, division, absolute_import, unicode_literals
+
+import getpass
 import github3
-
-
-# TODO Put this somewhere better
 import os
-gh = github3.GitHub(token=os.getenv("GITHUB_TOKEN"))
 
+TOKEN_NAME = "LICECOMB_GITHUB_TOKEN"
+
+def build_github_connection():
+    github_token = os.getenv(TOKEN_NAME)
+    
+    if not github_token:
+        print("%s not found in environment" % TOKEN_NAME)
+        username = raw_input("Enter your GitHub username, or blank to try to proceed without authentication: ")
+        if username:
+            password = getpass.getpass()
+            github_token = github3.GitHub().authorize(username, password)
+            
+            if github_token:
+                print("Generated authentication token for licecomb: %s" % github_token)
+                print()
+                print("TODO Instructions for saving")
+            else:
+                print("Authentication failed. TODO")
+
+    return github3.GitHub(token=github_token)
+
+gh = build_github_connection()
 
 def licecomb(owner, repository_names, **options):
     repositories = get_repositories(owner, repository_names)
